@@ -1,6 +1,100 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+input,
+textarea,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  color: #1a1a1a;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-feature-settings: "pnum" on, "lnum" on, "cv13" on, "calt" off;
+  font-size: 100%;
+  letter-spacing: 0;
+  vertical-align: baseline;
+  word-break: keep-all;
+}
+
   html {
     margin: 0;
     padding: 0;
@@ -200,7 +294,4 @@ export const GlobalStyles = createGlobalStyle`
     mask-image: radial-gradient(white, black);
   }
 
-  div, p, span, a{
-    ${({ theme }) => theme.textSize.S14W400};
-  }
 `;
