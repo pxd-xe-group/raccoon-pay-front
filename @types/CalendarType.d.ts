@@ -1,4 +1,4 @@
-declare module 'dateType' {
+declare module 'CalendarType' {
   export interface DateType {
     day: string;
     date: number;
