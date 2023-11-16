@@ -36,9 +36,3 @@ const CalendarWrap = styled.div`
   grid-template-columns: repeat(7, 1fr);
   width: 100%;
 `;
-
-const CalendarHeader = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  width: 100%;
-`;
