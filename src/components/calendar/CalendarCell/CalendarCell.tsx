@@ -13,7 +13,7 @@ const CalendarCell = ({ date, amount, isHolyDay, pay, memo }: CalendarCellProps)
       <Date>{date.date}</Date>
 
       <CalendarContent>
-        {isHolyDay ? <div>X</div> : <Pay>₩{amount ? amount : pay}</Pay>}
+        {!isHolyDay && <Pay>₩{amount ? amount : pay}</Pay>}
         {!isHolyDay && memo && <Memo>memo</Memo>}
       </CalendarContent>
     </CellWrap>
