@@ -1,15 +1,5 @@
-declare module 'CalendarType' {
-  export interface DateType {
-    day: string;
-    date: number;
-    index: number;
-  }
+// 타입을 우선시 사용 해당 파일은 api관련 타입을 사용한다.
+// 컴포넌트 타입은 해당 컴포넌트 파일에 선언한다.
+// 추후 단위를 정하자
 
-  export interface CalendarCellProps {
-    date: DateType;
-    amount?: number;
-    isHolyDay: boolean;
-    pay: number;
-    memo?: string;
-  }
-}
+export {};

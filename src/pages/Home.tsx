@@ -2,25 +2,25 @@
 
 // utile & type
 import styled from 'styled-components';
-import getMonth from '@/src/utils/getMonth';
+import genCalendarData from '@/src/utils/genCalendarData';
+import { WEEKENDS } from '@/src/utils/constants';
 
 // component
 import { CalendarCell } from '@/src/components/calendar/CalendarCell';
 
 export default function Home() {
-  const daysData = getMonth();
+  const CalendarData = genCalendarData();
 
   return (
     <main>
       <CalendarWrap>
-        {daysData.map((data, index) => {
-          // 임시
-          const isHolyDay = data.day === '일' || data.day === '토';
+        {CalendarData.map((data, index) => {
+          const isHoliDay = WEEKENDS.includes(data.day);
           return (
             <CalendarCell
               key={index}
-              date={{ ...data, index }}
-              isHolyDay={isHolyDay}
+              date={{ ...data }}
+              isHoliDay={isHoliDay}
               pay={10000}
               memo={'긴자료코'}
             />

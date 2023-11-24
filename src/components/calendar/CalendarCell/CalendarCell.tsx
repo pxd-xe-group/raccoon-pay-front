@@ -1,28 +1,33 @@
 'use client';
 
 // utile & type
-import React from 'react';
 import styled, { css } from 'styled-components';
-import { CalendarCellProps } from 'dateType';
 
-const CalendarCell = ({ date, amount, isHolyDay, pay, memo }: CalendarCellProps) => {
-  return (
-    <CellWrap isHolyDay={isHolyDay}>
-      {date.index < 7 && <Week>{date.day}</Week>}
-
-      <Date>{date.date}</Date>
-
-      <CalendarContent>
-        {!isHolyDay && <Pay>₩{amount ? amount : pay}</Pay>}
-        {!isHolyDay && memo && <Memo>memo</Memo>}
-      </CalendarContent>
-    </CellWrap>
-  );
+export type DateType = {
+  day: string;
+  date: number;
 };
+
+export type CalendarCellProps = {
+  date: DateType;
+  isDay?: boolean;
+  amount?: number;
+  isHoliDay: boolean;
+  pay: number;
+  memo?: string;
+};
+
+const CalendarCell = ({ date, amount, isHoliDay, pay, memo, isDay }: CalendarCellProps) => (
+  <CellWrap isHoliDay={isHoliDay}>
+    {isDay && <Week>{date.day}</Week>}
+    <Date>{date.date}</Date>
+    <CalendarContent></CalendarContent>
+  </CellWrap>
+);
 
 const CommonCellStyle = styled.div`
   color: ${({ theme }) => theme.gray.gray70};
-  font-size: 16px;
+  ${({ theme }) => theme.textSize.S16W400};
 `;
 
 const Week = styled(CommonCellStyle)``;
@@ -39,18 +44,17 @@ const CalendarContent = styled.div`
 `;
 
 const Pay = styled.strong`
-  font-size: 36px;
-  font-weight: 700;
+  ${({ theme }) => theme.textSize.S36W700};
   color: ${({ theme }) => theme.gray.gray50};
 `;
 
 const Memo = styled.span`
-  font-size: 24px;
+  ${({ theme }) => theme.textSize.S24W400};
   margin-top: 14px;
   color: ${({ theme }) => theme.gray.gray50};
 `;
 
-const CellWrap = styled.div<{ isHolyDay?: boolean }>`
+const CellWrap = styled.div<{ isHoliDay?: boolean }>`
   border: 1px solid ${({ theme }) => theme.gray.gray30};
   width: 100%;
   height: 300px;
@@ -59,11 +63,11 @@ const CellWrap = styled.div<{ isHolyDay?: boolean }>`
   flex-direction: column;
   padding: 14px;
 
-  ${({ isHolyDay }) =>
-    isHolyDay &&
+  ${({ isHoliDay }) =>
+    isHoliDay &&
     css`
       background-color: ${({ theme }) => theme.gray.gray10};
     `}
 `;
 
-export { CalendarCell };
+export default CalendarCell;
