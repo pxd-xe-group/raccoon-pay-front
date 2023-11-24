@@ -13,13 +13,13 @@ export type CalendarCellProps = {
   date: DateType;
   isDay?: boolean;
   amount?: number;
-  isHoliDay: boolean;
+  isHoliday: boolean;
   pay: number;
   memo?: string;
 };
 
-const CalendarCell = ({ date, amount, isHoliDay, pay, memo, isDay }: CalendarCellProps) => (
-  <CellWrap isHoliDay={isHoliDay}>
+const CalendarCell = ({ date, amount, isHoliday, pay, memo, isDay }: CalendarCellProps) => (
+  <CellWrap isHoliday={isHoliday}>
     {isDay && <Week>{date.day}</Week>}
     <Date>{date.date}</Date>
   </CellWrap>
@@ -54,7 +54,7 @@ const Memo = styled.span`
   color: ${({ theme }) => theme.gray.gray50};
 `;
 
-const CellWrap = styled.div<{ isHoliDay?: boolean }>`
+const CellWrap = styled.div<{ isHoliday?: boolean }>`
   border: 1px solid ${({ theme }) => theme.gray.gray30};
   width: 100%;
   height: 300px;
@@ -63,8 +63,8 @@ const CellWrap = styled.div<{ isHoliDay?: boolean }>`
   flex-direction: column;
   padding: 14px;
 
-  ${({ isHoliDay }) =>
-    isHoliDay &&
+  ${({ isHoliday }) =>
+    isHoliday &&
     css`
       background-color: ${({ theme }) => theme.gray.gray10};
     `}

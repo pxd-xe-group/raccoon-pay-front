@@ -3,11 +3,12 @@
 // utile & type
 import styled from 'styled-components';
 import genCalendarData from '@/src/utils/genCalendarData';
-import { WEEKENDS } from '@/src/utils/constants';
+import { WEEKENDS } from '@/src/constants/calendar';
 
 // component
 import { CalendarCell } from '@/src/components/calendar/CalendarCell';
 
+// TODO: 컴파운드 컴포넌트 패턴 적용필요
 export default function Home() {
   const CalendarData = genCalendarData();
 
@@ -15,12 +16,12 @@ export default function Home() {
     <main>
       <CalendarWrap>
         {CalendarData.map((data, index) => {
-          const isHoliDay = WEEKENDS.includes(data.day);
+          const isHoliday = WEEKENDS.includes(data.day);
           return (
             <CalendarCell
               key={index}
-              date={{ ...data }}
-              isHoliDay={isHoliDay}
+              date={data}
+              isHoliday={isHoliday}
               isDay={data.isDay}
               pay={10000}
               memo={'긴자료코'}
