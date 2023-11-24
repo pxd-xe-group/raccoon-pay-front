@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 export type DateType = {
   day: string;
   date: number;
+  isDay?: boolean;
 };
 
 export type CalendarCellProps = {
@@ -21,7 +22,6 @@ const CalendarCell = ({ date, amount, isHoliDay, pay, memo, isDay }: CalendarCel
   <CellWrap isHoliDay={isHoliDay}>
     {isDay && <Week>{date.day}</Week>}
     <Date>{date.date}</Date>
-    <CalendarContent></CalendarContent>
   </CellWrap>
 );
 

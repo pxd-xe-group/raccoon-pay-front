@@ -11,6 +11,8 @@ import { CalendarCell } from '@/src/components/calendar/CalendarCell';
 export default function Home() {
   const CalendarData = genCalendarData();
 
+  console.log(CalendarData);
+
   return (
     <main>
       <CalendarWrap>
@@ -21,6 +23,7 @@ export default function Home() {
               key={index}
               date={{ ...data }}
               isHoliDay={isHoliDay}
+              isDay={data.isDay}
               pay={10000}
               memo={'긴자료코'}
             />
