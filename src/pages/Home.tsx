@@ -11,8 +11,6 @@ import { CalendarCell } from '@/src/components/calendar/CalendarCell';
 export default function Home() {
   const CalendarData = genCalendarData();
 
-  console.log(CalendarData);
-
   return (
     <main>
       <CalendarWrap>
