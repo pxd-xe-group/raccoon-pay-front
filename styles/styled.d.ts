@@ -2,7 +2,7 @@ import { css, SerializedStyles } from 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     gray: {
-      default: string;
+      gray00: string;
       gray10: string;
       gray20: string;
       gray30: string;
@@ -13,23 +13,6 @@ declare module 'styled-components' {
       gray80: string;
       gray90: string;
       gray100: string;
-    };
-    palette: {
-      blue10: string;
-      blue20: string;
-      blue30: string;
-      blue40: string;
-      blue50: string;
-      blue60: string;
-      blue70: string;
-      blue80: string;
-      blue90: string;
-    };
-    boxShadow: {
-      shadow10: SerializedStyles;
-      shadow20: SerializedStyles;
-      shadow30: SerializedStyles;
-      shadow40: SerializedStyles;
     };
     textSize: {
       S12W400: SerializedStyles;
@@ -47,13 +30,34 @@ declare module 'styled-components' {
       S20W400: SerializedStyles;
       S20W500: SerializedStyles;
       S20W700: SerializedStyles;
+      S24W400: SerializedStyles;
+      S24W500: SerializedStyles;
+      S24W700: SerializedStyles;
       S28W400: SerializedStyles;
       S28W500: SerializedStyles;
       S28W700: SerializedStyles;
       S32W400: SerializedStyles;
       S32W500: SerializedStyles;
       S32W700: SerializedStyles;
+      S36W400: SerializedStyles;
+      S36W500: SerializedStyles;
+      S36W700: SerializedStyles;
       S64W700: SerializedStyles;
+    };
+    green: {
+      greenLight: string;
+      greenBasic: string;
+      greenDark: string;
+    };
+    pink: {
+      pinkLight: string;
+      pinkBasic: string;
+      pinkDark: string;
+    };
+    caution: {
+      success: string;
+      caution: string;
+      functionDimmed: string;
     };
     media: {
       mobile: string;

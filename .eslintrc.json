@@ -1,3 +1,7 @@
+// 이에스린트를 처음으로 설정한 개발자한테 권장되는 설정이다.
+// TODO : 쓸모없는 react 임포트 경고줄 만들기
+
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+
 }
