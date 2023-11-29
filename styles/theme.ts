@@ -2,42 +2,17 @@ import { DefaultTheme, css } from 'styled-components';
 
 export const defaultTheme: DefaultTheme = {
   gray: {
-    default: '#000',
-    gray10: '#2e2e2e',
-    gray20: '#404040',
-    gray30: '#595959',
-    gray40: '#737373',
-    gray50: '#8c8c8c',
-    gray60: '#a6a6a6',
-    gray70: '#bfbfbf',
-    gray80: '#d9d9d9',
-    gray90: '#f2f2f2',
-    gray100: '#ffffff'
-  },
-  palette: {
-    blue10: '#F1FBFE',
-    blue20: '#E0F6FD',
-    blue30: '#C0EDFB',
-    blue40: '#A1E4F9',
-    blue50: '#82DBF7',
-    blue60: '#65BEDA',
-    blue70: '#4C8FA4',
-    blue80: '#335F6D',
-    blue90: '#193037'
-  },
-  boxShadow: {
-    shadow10: css`
-      box-shadow: 0 10px 34px rgba(0 0 0/0.08);
-    `,
-    shadow20: css`
-      box-shadow: 0 4px 12px rgba(0 0 0/0.12);
-    `,
-    shadow30: css`
-      box-shadow: 0 12px 60px rgba(0 0 0/0.1);
-    `,
-    shadow40: css`
-      box-shadow: 0 35px 64px rgba(0 0 0/0.24);
-    `
+    gray00: '#fff',
+    gray10: '#F5F6FA',
+    gray20: '#EDF0F5',
+    gray30: '#D4D7DD',
+    gray40: '#B5B9C4',
+    gray50: '#8A8E99',
+    gray60: '#696D77',
+    gray70: '#4B4E55',
+    gray80: '#3A3D44',
+    gray90: '#2C2E33',
+    gray100: '#0F1011'
   },
   textSize: {
     S12W400: css`
@@ -130,6 +105,24 @@ export const defaultTheme: DefaultTheme = {
       line-height: 140%;
     `,
 
+    S24W400: css`
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 140%;
+    `,
+
+    S24W500: css`
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 140%;
+    `,
+
+    S24W700: css`
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 140%;
+    `,
+
     S28W400: css`
       font-weight: 400;
       font-size: 2.8rem;
@@ -163,11 +156,41 @@ export const defaultTheme: DefaultTheme = {
       font-size: 3.2rem;
       line-height: 160%;
     `,
+    S36W400: css`
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 160%;
+    `,
+    S36W500: css`
+      font-weight: 500;
+      font-size: 3.2rem;
+      line-height: 160%;
+    `,
+    S36W700: css`
+      font-weight: 700;
+      font-size: 3.2rem;
+      line-height: 160%;
+    `,
     S64W700: css`
       font-weight: 700;
       font-size: 6.4rem;
       line-height: 160%;
     `
+  },
+  green: {
+    greenLight: '#8AF53F',
+    greenBasic: '#00DA71',
+    greenDark: '#00BB61'
+  },
+  pink: {
+    pinkLight: '#FCABE7',
+    pinkBasic: '#FF539B',
+    pinkDark: '#E9156E'
+  },
+  caution: {
+    success: '#27C683',
+    caution: '#FE5151',
+    functionDimmed: 'rgba(0, 0, 0, 0.55)'
   },
   media: {
     mobile: `screen and (max-width: 767px)`

@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
 import Providers from '@/styles/providers';
 import StyledComponentsRegistry from '@/styles/registry';
-
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap'
-});
 
 export const metadata: Metadata = {
   title: '페이코는 너굴맨이 처리했다',
@@ -19,7 +12,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <StyledComponentsRegistry>
       <Providers>
         <html lang="en">
-          <body className={roboto.className}>{children}</body>
+          <body>{children}</body>
+          <link
+            rel="stylesheet preload prefetch"
+            as="style"
+            href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+          />
         </html>
       </Providers>
     </StyledComponentsRegistry>
