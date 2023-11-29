@@ -17,12 +17,12 @@ const genCalendarData = (): DateType[] => {
   const CalendarData = Array.from({ length: CALENDAR_CELL_LENGTH }, (_, index) => {
     const currentDay = index + 1 - startWeek;
     const currentDayObj = dayjs(firstDayOfMonth).date(currentDay);
-    const isDay = index < 6;
+    const isFirstWeek = index < 7; // 첫 번쨰 주에는 위에 월~일을 표시
 
     const dayData = {
       day: ALL_DAYS[currentDayObj.day()],
-      date: currentDayObj.date(),
-      isDay
+      date: currentDayObj,
+      isFirstWeek
     };
 
     return dayData;

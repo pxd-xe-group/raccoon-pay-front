@@ -83,29 +83,29 @@ audio,
 video,
 button {
   box-sizing: border-box;
+  margin: 0;
   padding: 0;
   border: 0;
-  margin: 0;
   color: #1a1a1a;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  font-feature-settings: "pnum" on, "lnum" on, "cv13" on, "calt" off;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-size: 100%;
   letter-spacing: 0;
-  vertical-align: baseline;
   word-break: keep-all;
+  vertical-align: baseline;
+  font-feature-settings: "pnum" on, "lnum" on, "cv13" on, "calt" off;
 }
 
   html {
     margin: 0;
     padding: 0;
+    border-collapse: collapse;
     border: 0;
+    background-color: #f9f9f9;
     font-size: 10px;
     letter-spacing: -0.01em;
     vertical-align: baseline;
-    background-color: #f9f9f9;
     appearance: none;
     -webkit-appearence: none;
-    border-collapse: collapse;
     font-feature-settings: 'pnum' on, 'lnum' on, 'calt' off, 'cv13' on !important;
   }
 
@@ -119,8 +119,8 @@ button {
   }
 
   *{
-    color :${({ theme }) => theme.gray.gray10};
     box-sizing: border-box;
+    color :${({ theme }) => theme.gray.gray10};
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -171,8 +171,8 @@ button {
   }
 
   table {
-    border-collapse: collapse;
     border-spacing: 0;
+    border-collapse: collapse;
   }
 
   h1,
@@ -187,8 +187,8 @@ button {
 
   a {
     display: inline-block;
-    text-decoration: none;
     color:${({ theme }) => theme.gray.gray10} !important;
+    text-decoration: none;
   }
 
   a:link,
@@ -204,11 +204,11 @@ button {
   }
 
   button {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    background: none;
     border: 0;
-    box-sizing: inherit;
+    background: none;
     cursor: pointer;
   }
 
@@ -264,7 +264,6 @@ button {
     height: 0;
   }
 
-  // input number 버튼 삭제
   input[type='number']::-webkit-outer-spin-button,
   input[type='number']::-webkit-inner-spin-button {
     margin: 0;
@@ -273,7 +272,6 @@ button {
 
   img {
     display: block;
-    image-rendering: crisp-edges;
     image-rendering: optimize-contrast;
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -ms-interpolation-mode: nearest-neighbor;
@@ -283,11 +281,9 @@ button {
   button,
   span,
   a {
-    image-rendering: crisp-edges;
     image-rendering: optimize-contrast;
-  } // 백그라운드 이미지 랜더링 css
+  }
 
-  // ios video border
   video {
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-mask-image: radial-gradient(white, black);
