@@ -55,6 +55,11 @@ const Date = styled(CommonCellStyle)<{ $isToday?: boolean }>`
       border-radius: 50%;
       background-color: ${({ theme }) => theme.green.greenBasic};
       color: white;
+
+      @media ${({ theme }) => theme.media.mobile} {
+        width: 20px;
+        height: 20px;
+      }
     `};
 `;
 

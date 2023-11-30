@@ -2,14 +2,14 @@
 
 // utile & type
 import styled from 'styled-components';
-import genCalendarData from '@/src/utils/genCalendarData';
+import GenCalendarData from '@/src/utils/genCalendarData';
 
 // component
 import { CalendarCell } from '@/src/components/calendar/CalendarCell';
 
 // TODO: 컴파운드 컴포넌트 패턴 적용필요
 export default function Home() {
-  const CalendarData = genCalendarData();
+  const CalendarData = GenCalendarData();
 
   return (
     <main>

@@ -1,8 +1,12 @@
 'use client';
-import Images from '@/src/utils/images';
+import { useContext } from 'react';
 import styled from 'styled-components';
+import Images from '@/src/utils/images';
+import { DateContext } from '@/src/context/DateContext';
 
 const Header = () => {
+  const { date, handleDate } = useContext(DateContext);
+
   return (
     <HeaderWrap>
       <MenuLogoWrap>
@@ -17,13 +21,14 @@ const Header = () => {
         <LogoImages alt="logo icon" src="/img/header_payco.svg" width={50} height={50} priority />
       </MenuLogoWrap>
       <DateWrap>
-        <TodayBtn>오늘</TodayBtn>
+        <TodayBtn onClick={() => handleDate()}>오늘</TodayBtn>
         <ArrowBtnWrap>
           <Images
             alt="left arrow icon"
             src="/icon/left_arrow.svg"
             width={24}
             height={24}
+            onClick={() => handleDate(-1)}
             style={{ cursor: 'pointer' }}
           />
           <Images
@@ -31,10 +36,11 @@ const Header = () => {
             src="/icon/right_arrow.svg"
             width={24}
             height={24}
+            onClick={() => handleDate(1)}
             style={{ cursor: 'pointer' }}
           />
         </ArrowBtnWrap>
-        <Date>2023 11월</Date>
+        <Date>{date.format('YYYY M월')}</Date>
       </DateWrap>
     </HeaderWrap>
   );
@@ -87,9 +93,16 @@ const TodayBtn = styled.button`
   border: 1px solid ${({ theme }) => theme.gray.gray30};
   border-radius: 5px;
   ${({ theme }) => theme.textSize.S12W700};
-
+  transition: all 0.3s;
   @media ${({ theme }) => theme.media.mobile} {
     display: none;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.gray.gray30};
+  }
+  &:active {
+    background-color: ${({ theme }) => theme.gray.gray40};
   }
 `;
 
