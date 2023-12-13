@@ -1,19 +1,16 @@
 'use client';
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { DateType } from '@/src/components/calendar/CalendarCell/index';
 import { ALL_DAYS, CALENDAR_CELL_LENGTH } from '@/src/constants/calendar';
-import { useContext } from 'react';
-import { DateContext } from '../context/DateContext';
 
 /**
  * @description 달력 데이터 생성
  * @param {number} month - 달
  */
 
-const GenCalendarData = (): DateType[] => {
-  const { date } = useContext(DateContext);
-  const month = date.month();
-  const year = date.year();
+const genCalendarData = (currentDate: Dayjs): DateType[] => {
+  const month = currentDate.month();
+  const year = currentDate.year();
 
   const firstDayOfMonth = dayjs(new Date(year, month, 1));
   const startWeek = firstDayOfMonth.day();
@@ -35,4 +32,4 @@ const GenCalendarData = (): DateType[] => {
   return CalendarData;
 };
 
-export default GenCalendarData;
+export default genCalendarData;

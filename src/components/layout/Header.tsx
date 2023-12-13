@@ -15,7 +15,6 @@ const Header = () => {
           src="/icon/menu.svg"
           width={24}
           height={24}
-          priority
           style={{ cursor: 'pointer' }}
         />
         <LogoImages alt="logo icon" src="/img/header_payco.svg" width={50} height={50} priority />
@@ -83,6 +82,7 @@ const DateWrap = styled.div`
   align-items: center;
   margin-left: 197px;
   gap: 28px;
+
   @media ${({ theme }) => theme.media.tablet} {
     margin-left: auto;
   }
@@ -90,10 +90,12 @@ const DateWrap = styled.div`
 
 const TodayBtn = styled.button`
   padding: 12px 20px;
+
+  transition: all 0.3s;
   border: 1px solid ${({ theme }) => theme.gray.gray30};
   border-radius: 5px;
+
   ${({ theme }) => theme.textSize.S12W700};
-  transition: all 0.3s;
   @media ${({ theme }) => theme.media.mobile} {
     display: none;
   }
@@ -101,6 +103,7 @@ const TodayBtn = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.gray.gray30};
   }
+
   &:active {
     background-color: ${({ theme }) => theme.gray.gray40};
   }

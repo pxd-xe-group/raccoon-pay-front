@@ -31,7 +31,7 @@ export default function Images({
       quality={50}
       loading={priority ? 'eager' : 'lazy'}
       width={width}
-      fill={!width && !height ? true : false}
+      fill={!width && !height}
       height={height}
       onClick={onClick}
       style={{ ...style }}

@@ -1,6 +1,5 @@
 'use client';
 
-import { WEEKENDS } from '@/src/constants/calendar';
 import dayjs, { Dayjs } from 'dayjs';
 // utile & type
 import styled, { css } from 'styled-components';
@@ -14,13 +13,13 @@ export type DateType = {
 export type CalendarCellProps = {
   date: DateType;
   amount?: number;
+  isHoliday: boolean;
   pay: number;
   memo?: string;
+  isToday: boolean;
 };
 
-const CalendarCell = ({ date, amount, pay, memo }: CalendarCellProps) => {
-  const isHoliday = WEEKENDS.includes(date.day);
-  const isToday = dayjs(dayjs().format('YYYY-MM-DD')).isSame(date.date);
+const CalendarCell = ({ date, amount, pay, memo, isHoliday, isToday }: CalendarCellProps) => {
   return (
     <CellWrap $isHoliday={isHoliday}>
       {date.isFirstWeek && <Week>{date.day}</Week>}
