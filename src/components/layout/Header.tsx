@@ -3,8 +3,10 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import Images from '@/src/utils/images';
 import { DateContext } from '@/src/context/DateContext';
+import { NavContext } from '@/src/context/NavContext';
 
 const Header = () => {
+  const { setIsNavOpened } = useContext(NavContext);
   const { date, handleDate } = useContext(DateContext);
 
   return (
@@ -16,6 +18,7 @@ const Header = () => {
           width={24}
           height={24}
           style={{ cursor: 'pointer' }}
+          onClick={() => setIsNavOpened((prev) => !prev)}
         />
         <LogoImages alt="logo icon" src="/img/header_payco.svg" width={50} height={50} priority />
       </MenuLogoWrap>
