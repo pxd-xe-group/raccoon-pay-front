@@ -2,34 +2,41 @@ import styled from 'styled-components';
 import Images from '@/src/utils/images';
 import { PriceChip } from '@/src/components/chip';
 
-const SideNav = () => (
-  <Nav>
-    <Contents>
-      <PriceChip
-        title="이번 달 남은 금액이다구리"
-        price={158500}
-        color="dark"
-        withLogo={
-          <Images
-            alt="menu icon"
-            src="/icon/edit_light.svg"
-            width={18}
-            height={18}
-            style={{ cursor: 'pointer' }}
-            onClick={() => console.log('수정 기능')}
-          />
-        }
-      />
-      <PriceChip
-        title="하루에 이만큼 써야해구리"
-        price={9359.356}
-        desc="이번달 남은 금액 / 이번 달 남은 일수"
-        color="light"
-      />
-    </Contents>
-    <Copyright>{`Copyright ${new Date().getFullYear()}. pxd inc. all rights reserved.`}</Copyright>
-  </Nav>
-);
+// TODO: 너굴맨, 차트 추가요망, 금액 수정 기능 필요
+const SideNav = () => {
+  const editPrice = () => {
+    console.log('수정해보자고');
+  };
+
+  return (
+    <Nav>
+      <Contents>
+        <PriceChip
+          title="이번 달 남은 금액이다구리"
+          price={158500}
+          color="dark"
+          withLogo={
+            <Images
+              alt="menu icon"
+              src="/icon/edit_light.svg"
+              width={18}
+              height={18}
+              style={{ cursor: 'pointer' }}
+              onClick={editPrice}
+            />
+          }
+        />
+        <PriceChip
+          title="하루에 이만큼 써야해구리"
+          price={9359.356}
+          desc="이번달 남은 금액 / 이번 달 남은 일수"
+          color="light"
+        />
+      </Contents>
+      <Copyright>{`Copyright ${new Date().getFullYear()}. pxd inc. all rights reserved.`}</Copyright>
+    </Nav>
+  );
+};
 
 export default SideNav;
 
