@@ -43,6 +43,22 @@ const Nav = styled.nav`
   /* transition: width 0.3s ease-out; */
   padding: 30px 20px;
   flex-shrink: 0;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: ${({ theme }) => theme.gray.gray00};
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: ${({ theme }) => theme.gray.gray00};
+    box-shadow: 6px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 /* width: ${({ isOpened }) => (isOpened ? '320px' : 0)}; */

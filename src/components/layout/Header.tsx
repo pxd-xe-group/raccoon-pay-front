@@ -61,6 +61,7 @@ const HeaderWrap = styled.header`
   height: 64px;
   padding: 0 24px;
   border-bottom: 1px solid ${({ theme }) => theme.gray.gray30};
+  background-color: ${({ theme }) => theme.gray.gray00};
 
   @media ${({ theme }) => theme.media.mobile} {
     padding: 0 12px;
