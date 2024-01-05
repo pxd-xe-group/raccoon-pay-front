@@ -9,6 +9,10 @@ const Header = () => {
   const { setIsNavOpened } = useContext(NavContext);
   const { date, handleDate } = useContext(DateContext);
 
+  const handleToggleNav = () => {
+    setIsNavOpened((prev) => !prev);
+  };
+
   return (
     <HeaderWrap>
       <MenuLogoWrap>
@@ -18,7 +22,7 @@ const Header = () => {
           width={24}
           height={24}
           style={{ cursor: 'pointer' }}
-          onClick={() => setIsNavOpened((prev) => !prev)}
+          onClick={handleToggleNav}
         />
         <LogoImages alt="logo icon" src="/img/header_payco.svg" width={50} height={50} priority />
       </MenuLogoWrap>
