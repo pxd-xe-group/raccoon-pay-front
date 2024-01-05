@@ -27,7 +27,7 @@ const SideNav = () => (
         color="light"
       />
     </Contents>
-    <CopyLight>{`Copyright ${new Date().getFullYear()}. pxd inc. all rights reserved.`}</CopyLight>
+    <Copyright>{`Copyright ${new Date().getFullYear()}. pxd inc. all rights reserved.`}</Copyright>
   </Nav>
 );
 
@@ -70,7 +70,7 @@ const Contents = styled.div`
   gap: 24px;
 `;
 
-const CopyLight = styled.p`
+const Copyright = styled.p`
   color: ${({ theme }) => theme.gray.gray50};
 
   ${({ theme }) => theme.textSize.S12W400}
