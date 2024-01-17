@@ -6,7 +6,9 @@
     "dev": "next dev -p 3883",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier-fix": "prettier --write .",
+    "lint:styled": "stylelint 'src/**/*.{ts,tsx}' 'styles/**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
@@ -21,6 +23,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "postcss-styled-syntax": "^0.5.0",
     "prettier": "^3.0.3",
     "stylelint": "^15.11.0",
@@ -30,5 +34,12 @@
     "stylelint-prettier": "^4.0.2",
     "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^5"
+  },
+   "lint-staged": {
+    "*.{js,jsx.ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
