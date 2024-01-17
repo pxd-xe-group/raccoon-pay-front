@@ -1,7 +1,7 @@
 'use client';
 import dayjs, { Dayjs } from 'dayjs';
-import { DateType } from '@/src/components/calendar/CalendarCell/index';
 import { ALL_DAYS, CALENDAR_CELL_LENGTH } from '@/src/constants/calendar';
+import type { DateType } from '@/src/components/calendar';
 
 /**
  * @description 달력 데이터 생성

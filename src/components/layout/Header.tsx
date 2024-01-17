@@ -3,9 +3,15 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import Images from '@/src/utils/images';
 import { DateContext } from '@/src/context/DateContext';
+import { NavContext } from '@/src/context/NavContext';
 
 const Header = () => {
+  const { setIsNavOpened } = useContext(NavContext);
   const { date, handleDate } = useContext(DateContext);
+
+  const handleToggleNav = () => {
+    setIsNavOpened((prev) => !prev);
+  };
 
   return (
     <HeaderWrap>
@@ -16,6 +22,7 @@ const Header = () => {
           width={24}
           height={24}
           style={{ cursor: 'pointer' }}
+          onClick={handleToggleNav}
         />
         <LogoImages alt="logo icon" src="/img/header_payco.svg" width={50} height={50} priority />
       </MenuLogoWrap>
@@ -54,6 +61,7 @@ const HeaderWrap = styled.header`
   height: 64px;
   padding: 0 24px;
   border-bottom: 1px solid ${({ theme }) => theme.gray.gray30};
+  background-color: ${({ theme }) => theme.gray.gray00};
 
   @media ${({ theme }) => theme.media.mobile} {
     padding: 0 12px;
