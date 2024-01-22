@@ -15,6 +15,9 @@ declare module 'styled-components' {
       gray100: string;
     };
     textSize: {
+      S10W400: SerializedStyles;
+      S10W500: SerializedStyles;
+      S10W700: SerializedStyles;
       S12W400: SerializedStyles;
       S12W500: SerializedStyles;
       S12W700: SerializedStyles;
@@ -60,6 +63,7 @@ declare module 'styled-components' {
       functionDimmed: string;
     };
     media: {
+      tablet: string;
       mobile: string;
     };
   }
