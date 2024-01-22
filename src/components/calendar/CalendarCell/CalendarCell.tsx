@@ -1,8 +1,10 @@
 'use client';
 
+import useModal from '@/src/hooks/useModal';
 import dayjs, { Dayjs } from 'dayjs';
 // utile & type
 import styled, { css } from 'styled-components';
+import MainModal from '../../modal/MainModal';
 
 export type DateType = {
   day: string;
@@ -20,10 +22,22 @@ export type CalendarCellProps = {
 };
 
 const CalendarCell = ({ date, amount, pay, memo, isHoliday, isToday }: CalendarCellProps) => {
+  const { ModalWrapper, openModal, closeModal, isOpen } = useModal();
+
+  console.log(isOpen);
+
   return (
-    <CellWrap $isHoliday={isHoliday}>
+    <CellWrap
+      $isHoliday={isHoliday}
+      onClick={() => {
+        openModal();
+      }}
+    >
       {date.isFirstWeek && <Week>{date.day}</Week>}
       <Date $isToday={isToday}>{date.date.format('D')}</Date>
+      <ModalWrapper>
+        <MainModal closeModal={closeModal} />
+      </ModalWrapper>
     </CellWrap>
   );
 };
